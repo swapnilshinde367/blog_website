@@ -1,3 +1,4 @@
+{% extends "../blog/header.html" %}
 {% load crispy_forms_tags %}
 {% block content%}
 	<div class="container">
@@ -6,7 +7,7 @@
 			<form class="col s12" method="POST">
 				{% csrf_token %}
 				<div class="row">
-					{{form|crisp}}
+					{{form|crispy}}
 				</div>
 				<button type="submit" class="btn">Register</button>
 			</form>
