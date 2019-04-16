@@ -1,0 +1,32 @@
+<html>
+	<head>
+		{% load static %}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<title>
+			{% if title %}
+				{{ title }}
+			{% else %}
+				Django
+			{% endif%}
+		</title
+	</head>
+	<body>
+		{% include "blog/includes/navbar.html" %}
+		{% include "blog/includes/messages.html" %}
+		<div class = "container">
+			{% block content%}
+			{% endblock %}
+		</div>
+	</body>
+	<script type="text/javascript">
+			M.AutoInit();
+			document.addEventListener('DOMContentLoaded', function() {
+			var elems = document.querySelectorAll('.sidenav');
+			var instances = M.Sidenav.init(elems, {});
+			});
+	</script>
+</html>
+
+

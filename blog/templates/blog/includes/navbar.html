@@ -1,0 +1,19 @@
+<nav>
+	<div class="nav-wrapper grey darken-4">
+		<a href="{% url 'blogs_home' %}" class="brand-logo">Awesome Blog</a>
+		<a href="{% url 'blogs_home' %}" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		<ul class="right hide-on-med-and-down">
+			<li><a href="{% url 'blogs_home' %}">Home</a></li>
+			<li><a href="{% url 'about_blogs' %}">About</a></li>
+			<li><a href="{% url 'user_login' %}">Login</a></li>
+			<li><a href="{% url 'user_registration' %}">Register</a></li>
+		</ul>
+	</div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+	<li><a href="{% url 'blogs_home' %}">Home</a></li>
+	<li><a href="{% url 'about_blogs' %}">About</a></li>
+	<li><a href="{% url 'user_login' %}">Login</a></li>
+	<li><a href="{% url 'user_registration' %}">Register</a></li>
+</ul>

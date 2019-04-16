@@ -1,0 +1,16 @@
+{% load crispy_forms_tags %}
+{% block content%}
+	<div class="container">
+		<div class="row">
+			<br>
+			<form class="col s12" method="POST">
+				{% csrf_token %}
+				<div class="row">
+					{{form|crisp}}
+				</div>
+				<button type="submit" class="btn">Register</button>
+			</form>
+			If you already have an account, then <a href="{% url 'user_login' %}">login here</a>
+		</div>
+	</div>
+{% endblock %}
