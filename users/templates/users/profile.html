@@ -1,0 +1,16 @@
+{% extends "../blog/header.html" %}
+s{% block content%}
+	<div class="container">
+		<div class="row">
+			<br>
+			<div class="divider"></div>
+			{% if user.is_authenticated %}
+				<div class="section">
+					<h5>{{ user.username }}</h5>
+					<p>{{ user.first_name }} {{ user.last_name }} </p>
+					<p>{{ user.email }} </p>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

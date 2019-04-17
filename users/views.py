@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from . forms import CustomUserCrationForm
 
 def register( request ) :
@@ -26,5 +27,8 @@ def register( request ) :
 	return render( request = request,
 					template_name = "users/register.html",
 					context = context )
-def user_login( request ) :
-	pass
+
+@login_required
+def user_profile( request ) :
+	return render( request = request,
+					template_name = 'users/profile.html' )
