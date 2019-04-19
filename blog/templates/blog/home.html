@@ -18,6 +18,10 @@
 								{{ blog.date_posted | date:"d M Y" }}
 							</span>
 							<a href="/blog/{{ blog.id }}">Read More</a>
+							<div>
+								<img src="{{ blog.author.profile.user_image.url }}" alt="" class="circle responsive-img" width="50px" height="50px">
+								<a href="/user/{{ blog.author.id }}">{{ blog.author.first_name }} {{ blog.author.last_name }}</a>
+							</div>
 						</div>
 					</div>
 				{% endfor %}

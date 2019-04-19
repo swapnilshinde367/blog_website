@@ -1,16 +1,33 @@
 {% extends "../blog/header.html" %}
+{% load crispy_forms_tags %}
 s{% block content%}
 	<div class="container">
-		<div class="row">
-			<br>
-			<div class="divider"></div>
-			{% if user.is_authenticated %}
-				<div class="section">
-					<h5>{{ user.username }}</h5>
-					<p>{{ user.first_name }} {{ user.last_name }} </p>
-					<p>{{ user.email }} </p>
+		<div class="col s12 m8 offset-m2 l6 offset-l3">
+			<div class="card-panel grey lighten-5 z-depth-1">
+				<div class="row valign-wrapper">
+					<div class="col s2">
+						<img src="{{ user.profile.user_image.url }}" alt="" class="circle responsive-img">
+					</div>
+					<div class="col s10">
+						<span class="black-text">
+							{{ user.first_name }} {{ user.last_name }}
+						</span>
+						<div class="black-text">
+							{{ user.email }}
+						</div>
+					</div>
 				</div>
-			{% endif %}
+			</div>
 		</div>
+		<div class="divider"></div>
+		<br>
+		<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="row">
+				{{user_update_form|crispy}}
+				{{user_image_update_form|crispy}}
+			</div>
+			<button type="submit" class="btn">Update</button>
+		</form>
 	</div>
 {% endblock %}

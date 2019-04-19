@@ -25,4 +25,3 @@ def about( request ) :
 	return render( request = request,
 					template_name = "blog/about.html",
 					context = context )
-
