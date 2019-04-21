@@ -1,6 +1,7 @@
 {% extends "blog/header.html" %}
 {% block content %}
 	<div class="container">
+		<h3>Posts by {{view.kwargs.username}} ({{ page_obj.paginator.count }})</h3>
 		<div class="row">
 			{% for blog in blogs %}
 				<div class="col s12 m6">
