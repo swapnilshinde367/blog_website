@@ -13,7 +13,9 @@
 				</div>
 			</div>
 			<div class="divider"></div>
-			<a href="{% url 'blogs_home'%}">Go to homepage</a>
+			<a class="btn green" href="{% url 'update_blog' blog.id %}">Edit</a>
+			<a class="btn red" href="{% url 'delete_blog' blog.id %}">Delete</a>
+			<a class="btn" href="{% url 'blogs_home' %}">Go Home</a>
 		</div>
 	</div>
 {% endblock%}

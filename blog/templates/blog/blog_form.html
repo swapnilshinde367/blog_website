@@ -1,0 +1,17 @@
+{% extends "../blog/header.html" %}
+{% load crispy_forms_tags %}
+{% block content%}
+	<div class="container">
+		<div class="row">
+			<br>
+			<form class="col s12" method="POST">
+				{% csrf_token %}
+				<div class="row">
+					{{form|crispy}}
+				</div>
+				<button type="submit" class="btn">Post</button>
+				<a class="btn" href="{% url 'blogs_home' %}">Go Home</a>
+			</form>
+		</div>
+	</div>
+{% endblock %}

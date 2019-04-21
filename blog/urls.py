@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . views import BlogsListView, BlogsDetailView, BlogsCreateView, BlogsUpdateView, BlogsDeleteView
 from . import views
 
 urlpatterns = [
-	path( '', views.home, name = "blogs_home" ),
+	path( '', BlogsListView.as_view(), name = "blogs_home" ),
 	path( 'about/', views.about, name = "about_blogs" ),
-	path( 'blog/<blog_id>/', views.show_blog, name = "show_blog" )
+	path( 'blog/<pk>/', BlogsDetailView.as_view(), name = "show_blog" ),
+	path( 'blog/create', BlogsCreateView.as_view(), name = "create_blog" ),
+	path( 'blog/update/<pk>', BlogsUpdateView.as_view(), name = "update_blog" ),
+	path( 'blog/delete/<pk>', BlogsDeleteView.as_view(), name = "delete_blog" )
 ]

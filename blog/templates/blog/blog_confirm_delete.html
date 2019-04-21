@@ -1,0 +1,17 @@
+{% extends "blog/header.html" %}
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<br>
+			<form class="col s12" method="POST">
+				{% csrf_token %}
+				<div class="row">
+					<h3> Are you sure you want to delete {{object.title}}?</h3>
+				</div>
+				<a class="btn green" href="{% url 'show_blog' blog.id %}">Cancel</a>
+				<button type="submit" class="btn red">Delete</button>
+				<a class="btn" href="{% url 'blogs_home' %}">Go Home</a>
+			</form>
+		</div>
+	</div>
+{% endblock%}
