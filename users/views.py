@@ -30,9 +30,6 @@ def register( request ) :
 
 @login_required
 def user_profile( request ) :
-
-
-
 	if request.method == 'POST' :
 
 		user_update_form = UserUpdateProflile( request.POST, instance = request.user )
