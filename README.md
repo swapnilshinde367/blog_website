@@ -14,4 +14,20 @@ Fucntionalities like
 Please use requirements.txt to setup the enviornment.
 
 # Dependancies
-in requirements.txt
+certifi
+
+chardet
+
+Django
+
+django-crispy-forms
+
+idna
+
+Pillow
+
+pytz
+
+requests
+
+urllib3
